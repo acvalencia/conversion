@@ -14,6 +14,7 @@ function setupInput() {
     });
 
     if (res.status === 200) {
+      displayMessage()
       setupHobbies(res.data.text)
     }
   }
@@ -41,3 +42,6 @@ function setupHobbies(text) {
   hobbieList.appendChild(li);
 }
 
+function displayMessage() {
+  alert('Articulo creado con exito!')
+}
