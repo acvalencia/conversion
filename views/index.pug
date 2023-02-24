@@ -1,0 +1,49 @@
+doctype html
+html.h-full.bg-gray-50(lang="en")
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0")
+    title Test Conversion
+    link(href="style/style.css", rel="stylesheet")
+    link(rel="stylesheet", href="style/main.css")
+  body.bg-gray-100
+    div.container.mx-auto.max-w-xl.py-6
+      h1.text-4xl.font-semibold.text-center.text-gray-800.mb-8 Developer Test
+      div.bg-white.py-12.mb-6.space-y-6.max-w-xl.px-10.mx-auto.rounded-lg.shadow-md
+        div
+          h2.text-3xl.font-semibold.leading-normal.mb-2.text-gray-800.mb-2 Nuevo Artículo
+          //- label.sr-only.mb-2 Text:
+          label.text-gray-900 Texto:
+          input#text.appearance-none.rounded-none.relative.block.w-full.px-3.py-2.border.border-gray-300.text-gray-900.rounded-md(
+            type="text"
+          )
+        div
+          button#button.relative.w-full.flex.justify-center.py-2.px-4.border.border-transparent.text-sm.font-medium.rounded-md.text-white.bg-indigo-600(type="submit") Guardar
+
+          h2.py-4.text-3xl.font-semibold.leading-normal.mb-2.text-gray-800.mb-2 Articulos
+
+          div.flex.m-auto.justify-between
+            h3.font-bold.text-gray-700
+
+          ul#hobbies.py-4
+            li
+              div.flex.m-auto
+                img.object-cover.w-40.h-40.rounded-full.mr-4.align-middle.m-auto(src="https://picsum.photos/200/200", alt="random")
+                div.w-full
+                  label.font-bold.text-gray-700 Nombre del Artículo
+                  br
+                  label.font-light.text-gray-600 Description Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente harum modi laborum porro eum placeat animi aspernatur cum aut, corrupti amet temporibus ea inventore eos facere laudantium repellat est sed!
+
+    script(src="js/index.js")
+    script.
+      document.body.onload = () => {
+        const hobbieList = document.getElementById("hobbies");
+        let data = JSON.parse(`!{JSON.stringify(articles)}`);
+        data.forEach( (d) => {
+          let li = document.createElement("li");
+          addHobbie(d.text, li);
+          hobbieList.appendChild(li);
+        })
+      }
+    script(src="https://unpkg.com/axios/dist/axios.min.js")
