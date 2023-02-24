@@ -71,9 +71,39 @@ Por los resultados del análisis de las diferentes estructuras de datos, podemos
 
 ## 5. Ejecutar app MVC
 
-1. Correr mongo db como aplicación docker
-docker run -d -p 80:80 docker/getting-started
+1. Clonar el repositorio de: https://github.com/acvalencia/conversion.git
 
-2.
+2. Instalar las dependencias
+
+```bash
+yarn install
+```
+
+ó
+
+```bash
+npm install
+```
+
+3. Ejecutar mongo db como aplicación docker
+
+```bash
+docker run -d -p 27017:27017 mongo
+```
+
+4. Ejecutar servidor con:
+
+```bash
+yarn start
+```
+
+ó
+
+```bash
+npm start
+```
+
+[![Screen Shot][screenshot2]](https://github.com/acvalencia/conversion)
 
 [screenshot1]: images/Cartas.png
+[screenshot2]: images/Captura.PNG
